@@ -1,0 +1,58 @@
+{
+    "From Dusk Till Dawn": {
+        "base_address": "http://www.addic7ed.com/overview/38931/From%20Dusk%20Till%20Dawn:%20The%20Series",
+        "last_path": "/serie/From_Dusk_Till_Dawn%3A_The_Series/1/10/The_Take"
+    },
+    "Penny Dreadful": {
+        "base_address": "http://www.addic7ed.com/overview/34172/Penny%20Dreadful",
+        "last_path": "/serie/Penny_Dreadful/1/8/Grand_Guignol"
+    },
+    "Extant": {
+        "base_address": "http://www.addic7ed.com/overview/37050/Extant",
+        "last_path": "/serie/Extant/1/13/Ascension"
+    },
+    "Archer": {
+        "base_address": "http://www.addic7ed.com/overview/23354/Archer%20(2009)",
+        "last_path": "/serie/Archer/5/13/Archer_Vice%3A_Arrival_Departure"
+    },
+    "Legend of Korra": {
+        "base_address": "http://www.addic7ed.com/overview/26254/The%20Legend%20of%20Korra",
+        "last_path": "/serie/The_Legend_of_Korra/4/6/Battle_of_Zaofu"
+    },
+    "Castle": {
+        "base_address": "http://www.addic7ed.com/overview/19267/Castle%20(2009)",
+        "last_path": "/serie/Castle/7/5/Meme_is_Murder"
+    },
+    "Doctor Who": {
+        "base_address": "http://www.addic7ed.com/overview/3332/Doctor%20Who%20(2005)",
+        "last_path": "/newsub.php?show=12&season=8&episode=12&name=Death in Heaven&title=Doctor Who (2005)"
+    },
+    "Sons of Anarchy": {
+        "base_address": "http://www.addic7ed.com/overview/18174/Sons%20of%20Anarchy",
+        "last_path": "/serie/Sons_of_Anarchy/7/9/What_A_Piece_Of_Work_Is_Man"
+    },
+    "Orange is the New Black": {
+        "base_address": "http://www.addic7ed.com/overview/32950/Orange%20is%20the%20New%20Black",
+        "last_path": "/serie/Orange_is_the_New_Black/2/13/We_Have_Manners._We%27re_Polite."
+    },
+    "Metal Hurlant Chronicles": {
+        "base_address": "http://www.addic7ed.com/overview/30006/Metal%20Hurlant%20Chronicles",
+        "last_path": "/serie/Metal_Hurlant_Chronicles/2/6/Back_To_Reality"
+    },
+    "Marvel's Agents of S.H.I.E.L.D": {
+        "base_address": "http://www.addic7ed.com/overview/32656/Marvel",
+        "last_path": "/serie/Marvel%27s_Agents_of_S.H.I.E.L.D./2/6/A_Fractured_House"
+    },
+    "Episodes": {
+        "base_address": "http://www.addic7ed.com/overview/23953/Episodes",
+        "last_path": "/serie/Episodes/3/9/Episode_Nine"
+    },
+    "Continuum": {
+        "base_address": "http://www.addic7ed.com/overview/30789/Continuum",
+        "last_path": "/serie/Continuum/3/13/Last_Minute"
+    },
+    "Helix": {
+        "base_address": "http://www.addic7ed.com/overview/34277/Helix",
+        "last_path": "/serie/Helix/1/13/Dans_L%27Ombre"
+    }
+}
