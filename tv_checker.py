@@ -43,7 +43,8 @@ def notify(name, path):
     print("\thttp://addic7ed.com"+path)
 
 def check(update_config, config):
-    for name, descriptor in config.items():
+    for name in sorted(config.keys()):
+        descriptor = config[name]
         
         last = last_link(descriptor["base_address"])
         
@@ -68,11 +69,11 @@ def main(args):
         check(not parsed["--no-update"], config)
         if not parsed["--no-update"]:
             with open(parsed["--config"], "w") as f:
-                json.dump(config, f, indent=4)
+                json.dump(config, f, indent=4, sort_keys=True)
     elif parsed["add"]:
         add(parsed["--name"], parsed["--base"], config)
         with open(parsed["--config"], "w") as f:
-            json.dump(config, f, indent=4)
+            json.dump(config, f, indent=4, sort_keys=True)
         
 if __name__=="__main__":
     main(sys.argv[1:])
