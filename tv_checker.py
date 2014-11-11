@@ -5,11 +5,12 @@ from bs4 import BeautifulSoup
 import requests
 import json
 from docopt import docopt
+from webbrowser import open_new_tab
 
 USAGE = """Addic7ed TV series subtitles checker
 
 Usage:
-  tv_checker.py check [--config=<config>] [--no-update]
+  tv_checker.py check [--config=<config>] [--no-update] [--open]
   tv_checker.py add --name=<name> --base=<base> [--config <config>]
 
 Options:
@@ -22,6 +23,8 @@ Options:
   -n, --no-update               Use this flag if you only want to check whether there are any new episodes, and not 
                                     download subtitles and watch those episodes now. Without this flag this script will 
                                     assume that just after running it, you'll watch episodes that it found as new.
+  -o, --open                    If this flag is used, each new subtitle will be opened in new browser tab (for 
+                                    convenient downloading).
   --name=<name>                 Name of TV series that you want to start to follow. Technically, it doesn't really
                                     matter, it is used only while notifying you.
   --base=<base>                 Base URL of added series. See --config explanation for details.
@@ -29,6 +32,8 @@ Options:
   -v, --version                 Show version of this script. WARNING: That will not be very helpful."""
   
 VERSION = "one and only"
+
+ADDICTED_BASE = "http://addic7ed.com"
 
 def last_link(base_address):
     response = requests.get(base_address)
@@ -40,9 +45,12 @@ def last_link(base_address):
 
 def notify(name, path):
     print('New subtitles for "'+name+'" found:')
-    print("\thttp://addic7ed.com"+path)
+    print("\t"+ADDICTED_BASE+path)
 
-def check(update_config, config):
+def show_in_browser(path):
+    open_new_tab(ADDICTED_BASE+path)
+
+def check(update_config, do_open, config):
     for name in sorted(config.keys()):
         descriptor = config[name]
         
@@ -50,6 +58,8 @@ def check(update_config, config):
         
         if not last==descriptor["last_path"]:
             notify(name, last)
+            if do_open:
+                show_in_browser(last)
             if update_config:
                 descriptor["last_path"] = last
 
@@ -61,12 +71,12 @@ def add(name, base, config):
 
 def main(args):
     parsed = docopt(USAGE, args, True, VERSION)
-    
+    #print(parsed)
     with open(parsed["--config"], "r") as f:
         config = json.load(f)
     
     if parsed["check"]:
-        check(not parsed["--no-update"], config)
+        check(not parsed["--no-update"], parsed["--open"], config)
         if not parsed["--no-update"]:
             with open(parsed["--config"], "w") as f:
                 json.dump(config, f, indent=4, sort_keys=True)
